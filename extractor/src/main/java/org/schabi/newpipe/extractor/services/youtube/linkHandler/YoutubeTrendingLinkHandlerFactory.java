@@ -30,7 +30,7 @@ import java.util.List;
 public class YoutubeTrendingLinkHandlerFactory extends ListLinkHandlerFactory {
 
     public String getUrl(String id, List<String> contentFilters, String sortFilter) {
-        return "https://www.youtube.com/feed/trending";
+        return "https://www.youtube.com";
     }
 
     @Override
