@@ -59,11 +59,11 @@ public class YoutubePlaylistLinkHandlerFactoryTest {
 
     @Test
     public void testDeniesInvalidYtUrl() throws ParsingException {
-        assertFalse(linkHandler.acceptUrl("https://www.youtube.com/feed/trending?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
-        assertFalse(linkHandler.acceptUrl("https://www.youtube.com/feed/subscriptions?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
-        assertFalse(linkHandler.acceptUrl("ftp://www.youtube.com/feed/trending?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
-        assertFalse(linkHandler.acceptUrl("www.youtube.com:22/feed/trending?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
-        assertFalse(linkHandler.acceptUrl("youtube  .    com/feed/trending?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
+        assertFalse(linkHandler.acceptUrl("https://www.youtube.com"));
+        assertFalse(linkHandler.acceptUrl("https://www.youtube.com"));
+        assertFalse(linkHandler.acceptUrl("ftp://www.youtube.com"));
+        assertFalse(linkHandler.acceptUrl("www.youtube.com:22"));
+        assertFalse(linkHandler.acceptUrl("youtube  .    com"));
         assertFalse(linkHandler.acceptUrl("?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
     }
 
@@ -82,11 +82,11 @@ public class YoutubePlaylistLinkHandlerFactoryTest {
 
     @Test
     public void testDeniesInvalidInvidioUrl() throws ParsingException {
-        assertFalse(linkHandler.acceptUrl("https://invidio.us/feed/trending?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
-        assertFalse(linkHandler.acceptUrl("https://invidio.us/feed/subscriptions?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
-        assertFalse(linkHandler.acceptUrl("ftp:/invidio.us/feed/trending?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
-        assertFalse(linkHandler.acceptUrl("invidio.us:22/feed/trending?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
-        assertFalse(linkHandler.acceptUrl("invidio  .    us/feed/trending?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
+        assertFalse(linkHandler.acceptUrl("https://invidio.us"));
+        assertFalse(linkHandler.acceptUrl("https://invidio.us"));
+        assertFalse(linkHandler.acceptUrl("ftp:/invidio.us"));
+        assertFalse(linkHandler.acceptUrl("invidio.us:22"));
+        assertFalse(linkHandler.acceptUrl("invidio  .    us"));
         assertFalse(linkHandler.acceptUrl("?list=PLz8YL4HVC87WJQDzVoY943URKQCsHS9XV"));
     }
 
