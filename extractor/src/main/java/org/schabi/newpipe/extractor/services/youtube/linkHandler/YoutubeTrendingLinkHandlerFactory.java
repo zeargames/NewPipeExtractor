@@ -44,7 +44,7 @@ public class YoutubeTrendingLinkHandlerFactory extends ListLinkHandlerFactory {
         try {
             urlObj = Utils.stringToURL(url);
         } catch (MalformedURLException e) {
-            return true;
+            return false;
         }
 
         String urlPath = urlObj.getPath();
