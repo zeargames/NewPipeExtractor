@@ -47,41 +47,41 @@ public class YoutubeTrendingLinkHandlerFactoryTest {
 
     @Test
     public void getUrl()
-            throws Exception {q
-        assertEquals(LinkHandlerFactory.fromId("").getUrl(), "https://www.youtube.com");
+            throws Exception {
+        assertEquals(LinkHandlerFactory.fromId("").getUrl(), "https://www.youtube.com/feed/trending");
     }
 
     @Test
     public void getId()
             throws Exception {
-        assertEquals(LinkHandlerFactory.fromUrl("https://www.youtube.com").getId(), "Trending");
+        assertEquals(LinkHandlerFactory.fromUrl("https://www.youtube.com/feed/trending").getId(), "Trending");
     }
 
     @Test
     public void acceptUrl() throws ParsingException {
-        assertTrue(LinkHandlerFactory.acceptUrl("https://www.youtube.com"));
-        assertTrue(LinkHandlerFactory.acceptUrl("https://www.youtube.com/?adsf=fjaj#fhe"));
-        assertTrue(LinkHandlerFactory.acceptUrl("http://www.youtube.com"));
-        assertTrue(LinkHandlerFactory.acceptUrl("www.youtube.com"));
-        assertTrue(LinkHandlerFactory.acceptUrl("youtube.com"));
-        assertTrue(LinkHandlerFactory.acceptUrl("youtube.com/?akdsakjf=dfije&kfj=dkjak"));
-        assertTrue(LinkHandlerFactory.acceptUrl("https://youtube.com"));
-        assertTrue(LinkHandlerFactory.acceptUrl("m.youtube.com"));
+        assertTrue(LinkHandlerFactory.acceptUrl("https://www.youtube.com/feed/trending"));
+        assertTrue(LinkHandlerFactory.acceptUrl("https://www.youtube.com/feed/trending?adsf=fjaj#fhe"));
+        assertTrue(LinkHandlerFactory.acceptUrl("http://www.youtube.com/feed/trending"));
+        assertTrue(LinkHandlerFactory.acceptUrl("www.youtube.com/feed/trending"));
+        assertTrue(LinkHandlerFactory.acceptUrl("youtube.com/feed/trending"));
+        assertTrue(LinkHandlerFactory.acceptUrl("youtube.com/feed/trending?akdsakjf=dfije&kfj=dkjak"));
+        assertTrue(LinkHandlerFactory.acceptUrl("https://youtube.com/feed/trending"));
+        assertTrue(LinkHandlerFactory.acceptUrl("m.youtube.com/feed/trending"));
 
-        assertTrue(LinkHandlerFactory.acceptUrl("https://www.invidio.us"));
-        assertTrue(LinkHandlerFactory.acceptUrl("https://invidio.us"));
-        assertTrue(LinkHandlerFactory.acceptUrl("invidio.us"));
+        assertTrue(LinkHandlerFactory.acceptUrl("https://www.invidio.us/feed/trending"));
+        assertTrue(LinkHandlerFactory.acceptUrl("https://invidio.us/feed/trending"));
+        assertTrue(LinkHandlerFactory.acceptUrl("invidio.us/feed/trending"));
 
-        assertFalse(LinkHandlerFactory.acceptUrl("https://youtu.be"));
+        assertFalse(LinkHandlerFactory.acceptUrl("https://youtu.be/feed/trending"));
         assertFalse(LinkHandlerFactory.acceptUrl("kdskjfiiejfia"));
-        assertFalse(LinkHandlerFactory.acceptUrl("https://www.youtube.com"));
-        assertFalse(LinkHandlerFactory.acceptUrl("https://www.youtube.com"));
-        assertFalse(LinkHandlerFactory.acceptUrl("https://www.youtube.com"));
-        assertFalse(LinkHandlerFactory.acceptUrl("peter klaut aepferl youtube.com"));
-        assertFalse(LinkHandlerFactory.acceptUrl("youtube.com"));
-        assertFalse(LinkHandlerFactory.acceptUrl("askdjfi youtube.com"));
-        assertFalse(LinkHandlerFactory.acceptUrl("    youtube.com"));
-        assertFalse(LinkHandlerFactory.acceptUrl("https://www.youtube.com"));
+        assertFalse(LinkHandlerFactory.acceptUrl("https://www.youtube.com/bullshit/feed/trending"));
+        assertFalse(LinkHandlerFactory.acceptUrl("https://www.youtube.com/feed/trending/bullshit"));
+        assertFalse(LinkHandlerFactory.acceptUrl("https://www.youtube.com/feed/bullshit/trending"));
+        assertFalse(LinkHandlerFactory.acceptUrl("peter klaut aepferl youtube.com/feed/trending"));
+        assertFalse(LinkHandlerFactory.acceptUrl("youtube.com/feed/trending askjkf"));
+        assertFalse(LinkHandlerFactory.acceptUrl("askdjfi youtube.com/feed/trending askjkf"));
+        assertFalse(LinkHandlerFactory.acceptUrl("    youtube.com/feed/trending"));
+        assertFalse(LinkHandlerFactory.acceptUrl("https://www.youtube.com/feed/trending.html"));
         assertFalse(LinkHandlerFactory.acceptUrl(""));
     }
 }
