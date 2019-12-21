@@ -96,6 +96,6 @@ public class YoutubeTrendingExtractorTest {
 
     @Test
     public void testGetUrl() throws Exception {
-        assertEquals(extractor.getUrl(), extractor.getUrl(), "https://www.youtube.com");
+        assertEquals(extractor.getUrl(), extractor.getUrl(), "https://www.youtube.com/feed/trending");
     }
 }
